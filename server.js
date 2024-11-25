@@ -1,4 +1,8 @@
 import express from "express";
+import conectarAoBanco from "./src/config/dbconfig.js";
+
+// Chamando a função que conecta o servidor com o banco de dados
+await conectarAoBanco(process.env.STRING_CONEXAO_DB);
 
 const posts = [
     {
