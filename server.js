@@ -2,29 +2,25 @@ import express from "express";
 
 const posts = [
     {
-      descricao: "Uma foto teste",
-      imagem: "https://placecats.com/millie/300/150"
+        id: 1,
+        descricao: "Gato 1",
+        imagem: "https://placecats.com/millie/300/150"
     },
     {
-      descricao: "Gato brincando com um novelo de lã",
-      imagem: "https://placecats.com/millie/300/150"
+        id: 2,
+        descricao: "Gato 2",
+        imagem: "https://placecats.com/millie/300/150"
     },
     {
-      descricao: "Gatinho dormindo em uma caixa",
-      imagem: "https://placecats.com/millie/300/150"
+        id: 3,
+        descricao: "Gato 3",
+        imagem: "https://placecats.com/millie/300/150"
     },
     {
-      descricao: "Gatos se olhando no espelho",
-      imagem: "https://placecats.com/millie/300/150"
+        id: 4,
+        descricao: "Gato 4",
+        imagem: "https://placecats.com/millie/300/150"
     },
-    {
-      descricao: "Gatinho curioso olhando para a câmera",
-      imagem: "https://placecats.com/millie/300/150"
-    },
-    {
-      descricao: "Gato tomando sol na janela",
-      imagem: "https://placecats.com/millie/300/150"
-    }
 ];
 
 // iniciando a função do express para subir o server
