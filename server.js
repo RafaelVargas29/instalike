@@ -40,4 +40,19 @@ app.get("/posts", (req, res) => {
     res.status(200).json(posts);
 });
 
+function buscaPostPorId(id) {
+    // Busca o id passado dentro do array de objetos post
+    return posts.findIndex((post) => {
+        return post.id === Number(id) // converte o id para number caso chegue como uma string
+    })
+}
 
+// Criando rota que vai receber o id de um post como parâmetro e retroná-lo
+app.get("/posts/:id", (req, res) => {
+
+    // pega o id passado nos parâmentros requisição (req) e envia para a função buscar
+    const index = buscaPostPorId(req.params.id);
+
+    //Enviando uma resposta com status 200 em formato json para quem acessa essa rota
+    res.status(200).json(posts[index]);
+});
