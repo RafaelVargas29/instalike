@@ -1,6 +1,12 @@
 import express from "express";
 import multer from "multer";
 import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postsController.js";
+import cors from "cors";
+
+const corsOptions = {
+    origin: "http://localhost:8000",
+    optionsSuccessStatus: 200
+}
 
 // Iniciando o multer e dizendo onde o multer vai guardar a imagens
 const upload = multer({ dest:"./uploads" });   
@@ -9,6 +15,9 @@ const upload = multer({ dest:"./uploads" });
 const routes = (app) => {
     // Faz com que o server retorne respostas json para as requisições
     app.use(express.json());
+
+    
+    app.use(cors(corsOptions));
 
     // Criando uma rota get. A função get recebe dois parâmentros: nome da rota ("/api") e uma função
     app.get("/posts", listarPosts);
