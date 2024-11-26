@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { listarPosts, postarNovoPost, uploadImagem } from "../controllers/postsController.js";
+import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postsController.js";
 
 // Iniciando o multer e dizendo onde o multer vai guardar a imagens
 const upload = multer({ dest:"./uploads" });   
@@ -15,7 +15,9 @@ const routes = (app) => {
 
     // Rota pra criar um post
     app.post("/posts", postarNovoPost);
-    app.post("/upload", upload.single("imagem"), uploadImagem)
+    app.post("/upload", upload.single("imagem"), uploadImagem);
+
+    app.put("/upload/:id", atualizarNovoPost);
 }
 
 // Exportando a função routes para se utilizada em outros lugares

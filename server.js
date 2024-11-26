@@ -4,6 +4,9 @@ import routes from "./src/routes/postRoutes.js";
 // iniciando a função do express para subir o server
 const app = express();
 
+// Faz com que a pasta uploads seja acessada publicamente (Servindo arquivos estáticos)
+app.use(express.static("uploads"));
+
 //Chama a função de rotas e passa o express como parâmetro
 routes(app);
 
